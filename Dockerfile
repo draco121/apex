@@ -10,7 +10,7 @@ COPY . .
 RUN go get
 
 # Build the Go application
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o projectmanagerservice .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o apex .
 
 # Stage 2: Run stage
 FROM debian:bookworm
@@ -19,10 +19,10 @@ FROM debian:bookworm
 WORKDIR /app
 
 # Copy only the necessary files from the build stage
-COPY --from=builder /app/projectmanagerservice /app/projectmanagerservice
+COPY --from=builder /app/apex /app/apex
 
 # Expose the port the application runs on
 EXPOSE 80
 
 # Command to run the executable
-CMD ["./projectmanagerservice"]
+CMD ["./apex"]

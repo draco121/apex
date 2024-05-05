@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/draco121/common/database"
-	"github.com/draco121/common/utils"
-	"github.com/draco121/projectmanagerservice/controllers"
-	"github.com/draco121/projectmanagerservice/core"
-	"github.com/draco121/projectmanagerservice/repository"
-	"github.com/draco121/projectmanagerservice/routes"
+	"apex/controllers"
+	"apex/core"
+	"apex/repository"
+	"apex/routes"
+	"github.com/draco121/horizon/database"
+	"github.com/draco121/horizon/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"os"
